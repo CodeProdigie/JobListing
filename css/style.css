@@ -1,0 +1,241 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+    border: none;
+    font-family: sans-serif;
+}
+
+.container{
+    width:100%;
+    height: 25rem;
+    background-color: rgb(51, 51, 177);
+    color:#fff;
+    position: relative;
+}
+
+.container header{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 2rem 0;
+}
+
+.container header a{
+    color:#fff;
+}
+.container header .menubar{
+    font-size: 2rem;
+    cursor: pointer;
+    display: none;
+}
+
+.container header .logo{
+    display: flex;
+    align-items: center;
+    gap:1rem;
+}
+
+.container header .logo i{
+    font-size: 2rem;
+    z-index:100;
+}
+
+.container header menu{
+    display: flex;
+    gap:20px;
+}
+
+.container header menu a{
+    color:#fff;
+}
+
+.container .banner{
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.container .banner p{
+    padding: 1rem 0;
+}
+
+.container .banner .align-search{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container .banner .search{
+    margin-top: 10px;
+    padding: 0.7rem 2rem;
+    border-radius: 10px;
+    background: #fff;
+    max-width: 80rem;
+    width: 50rem;
+    position: relative;
+}
+
+.container .banner .search input{
+    width: 100%;
+    padding: 0.5rem 0rem;
+    font-size: 1rem;
+    background: transparent;
+}
+
+.container .banner .search i{
+    position: absolute;
+    top:1rem;
+    right:30px;
+    font-size: 1.2rem;
+    color:gray
+}
+
+.container .success-message{
+    border-radius: 10px;
+    padding:1rem 3rem;
+    background-color:#131313;
+    max-width: 27rem;
+    position: fixed;
+    top:2rem;
+    right: 0;
+    transition: all 700ms ease-in-out;
+    display: none;
+    transform: translateX(30rem);
+}
+
+.container.open-success .success-message{
+    display: flex;
+    transform: translateX(0);
+}
+
+.container .success-message .position-success{
+    position:relative
+}
+
+.container .success-message .position-success .success{
+    display: flex;
+    align-items: center;
+    gap:2rem
+}
+
+.container .success-message .position-success .success i{
+    font-size: 2rem;
+    color:#008000
+}
+
+.container .success-message .position-success .success h2{
+    font-size: 1rem;
+    font-weight: 500;
+}
+.container .success-message .position-success .close-success{
+    position: absolute;
+    top:0rem;
+    right:-2rem;
+    font-size:1.2rem;
+    cursor: pointer;
+}
+
+.job-section{
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.job-section h2{
+    font-weight: 500;
+}
+
+.job-section .jobs{
+    padding: 3rem 7rem;
+    display: flex;
+    flex-wrap:wrap;
+    align-items: center;
+    justify-content: center;
+    gap:2rem;
+}
+
+.job-section .jobs .section{
+    max-width: 22rem;
+    box-shadow: 2px 2px 12px gray;
+    border-radius: 10px;
+    padding: 2rem 2rem;
+}
+
+.job-section .jobs .section i{
+    font-size: 4rem;
+    color:rgb(0, 73, 156);
+}
+
+.job-section .jobs .section h2{
+    color:rgb(10, 10, 185);
+    padding: 10px 0;
+}
+
+.job-section .jobs .section p{
+    font-size: 0.9rem;
+    font-weight: 300;
+}
+
+.job-section .jobs .section .salary{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    font-weight: 500;
+}
+.job-section .jobs .section .salary h3{
+    font-weight: 500;
+}
+
+.job-section .jobs .section button{
+    padding: 1rem 4rem;
+    background-color: rgb(10, 10, 185);
+    color:#fff;
+    border-radius: 10px;
+    transition: all 700ms ease;
+    cursor: pointer;
+}
+
+.job-section .jobs .section button:hover{
+    background-color: rgb(0, 71, 153);
+}
+
+.job-section .jobs .section span{
+    padding:8px 3rem;
+    text-align: center;
+    border-radius: 10px;
+    background-color: rgb(0, 71, 153);
+    color:#fff;
+}
+
+footer{
+    width:100%;
+    padding: 1rem 3rem;
+    text-align: center;
+    color:#fff;
+    background-color: rgb(10, 10, 185);
+}
+
+@media screen and (max-width:720px) {
+    .container header menu{
+        display: none;
+        transition: all 700ms ease;
+    }
+    .container header .menubar{
+        display: initial;
+        z-index: 100;
+    }
+    .container.open-nav header menu {
+        display: flex;
+        flex-direction: column;
+        gap:1rem;
+        padding: 5rem 2rem;
+        position: absolute;
+        top:0;
+        left:0;
+        width:100%;
+        background-color: rgb(51, 51, 177);
+        border-bottom: 3px solid #ffff;
+    }
+}
