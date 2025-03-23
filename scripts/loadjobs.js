@@ -42,13 +42,15 @@ applybtn.forEach((btn) => {
             const duration = btn.parentElement.querySelector(".duration").textContent;
             const pay = btn.parentElement.querySelector(".pay").textContent;
             const container = document.querySelector(".container")
+            let status="pending"
 
            const jobcontents = {
             logo:logo,
             jobName:jobName,
             description:description,
             duration:duration,
-            pay:pay
+            pay:pay,
+            status:status
            } 
            let jobdata=localStorage.getItem("jobdata")
         let verifydata = jobdata ? JSON.parse(jobdata) : []
@@ -84,3 +86,54 @@ searchbar.addEventListener("keyup", ()=> {
         }
     })
 })
+
+
+// load created jobs from the admin panel
+
+
+document.addEventListener("DOMContentLoaded",()=> {
+    const fetchJobs = JSON.parse(localStorage.getItem("allJobs"));
+    const currentJobs=document.querySelector(".job-section .jobs");
+    fetchJobs.forEach(fetchedJob => {
+        const sectiondiv=document.createElement("div");
+        sectiondiv.classList.add("section");
+        sectiondiv.innerHTML=`
+          <i class="bx bxl-react"></i>
+                    <h2>${fetchedJob.JobTitle}</h2>
+                    <p>${fetchedJob.JobDescription}</p>
+                    <div class="salary">
+                        <h3 class="duration">${fetchedJob.JobType}</h3>
+                        <h3 class="pay">${fetchedJob.JobSalary}</h3>
+                    </div>
+                    <button>Apply Now</button>
+        `
+        currentJobs.appendChild(sectiondiv)
+    })
+    const applybtn = document.querySelectorAll(".job-section .jobs .section button");
+    applybtn.forEach((btn) => {
+        btn.addEventListener("click", ()=> {
+                const logo = btn.parentElement.querySelector("i").className;
+                const jobName = btn.parentElement.querySelector("h2").textContent;
+                const description = btn.parentElement.querySelector("p").textContent;
+                const duration = btn.parentElement.querySelector(".duration").textContent;
+                const pay = btn.parentElement.querySelector(".pay").textContent;
+                const container = document.querySelector(".container")
+                    let status="pending"
+               const jobcontents = {
+                logo:logo,
+                jobName:jobName,
+                description:description,
+                duration:duration,
+                pay:pay,
+                status:status
+               } 
+               let jobdata=localStorage.getItem("jobdata")
+            let verifydata = jobdata ? JSON.parse(jobdata) : []
+            verifydata.push(jobcontents);
+            localStorage.setItem("jobdata", JSON.stringify(verifydata))
+            container.classList.add("open-success");
+            })  
+            
+    })
+})
+

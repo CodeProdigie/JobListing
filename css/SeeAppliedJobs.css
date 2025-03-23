@@ -1,0 +1,168 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    border: none;
+    outline: none;
+    text-decoration: none;
+}
+
+.dashboard{
+    min-height: 100vh;
+    display: flex;
+}
+
+.dashboard aside{
+    min-height: 100vh;
+    max-width: 20rem;
+    width: 100%;
+    background-color:rgb(51, 51, 177);
+    position: relative;
+}
+
+.dashboard aside .head{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: #fff;
+    padding: 3rem 0;
+}
+
+.dashboard aside .head i{
+    font-size: 2rem;
+}
+
+.dashboard aside .head h2{
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.menus{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.menus .menu{
+    display: flex;
+    /* flex-wrap: wrap; */
+    align-items: center;
+    gap: 10px;
+    padding: 0 5rem;
+    cursor: pointer;
+}
+
+.menus .menu i{
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+.menus .menu h2{
+    color: #fff;
+    font-size: 1.1rem;
+}
+
+.menus .menu:nth-of-type(4){
+    position: absolute;
+    bottom: 2rem;
+}
+
+main{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+main h2{
+   font-weight: 300;
+   margin-bottom: 20px;
+}
+
+/* table{
+    border: 1px solid #b0aeae;
+} */
+
+th,td{
+    padding: 1rem 2rem;
+    border-right: 1px solid #dbd8d8;
+}
+td{
+    border-bottom: 1px solid #dbd8d8;
+}
+td:last-child{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+td:first-child{
+    border-left: 1px solid #dbd8d8;
+}
+
+th{
+    background-color: rgb(59, 59, 203);
+    color: #fff;
+}
+
+td span{
+    cursor: pointer;
+}
+
+td .approve i{
+    color: green;
+}
+td .reject i{
+    color: red;
+}
+
+
+@media screen and (max-width:800px) {
+    .dashboard{
+        flex-wrap: wrap;
+        row-gap: 1rem;
+    }
+    .dashboard aside{
+        max-width: 100vw;
+        min-height: 60vh;
+    }
+
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .table-container {
+        overflow-x: auto; /* Enables scrolling */
+        display: block;
+        white-space: nowrap; /* Prevents text from wrapping */
+    }
+
+    th, td {
+        padding: 0.8rem 1rem;
+        font-size: 14px;
+    }
+
+    td:last-child {
+        flex-direction: column; /* Stack action buttons */
+        align-items: flex-start;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .table-container {
+        width: 100%;
+        overflow-x: auto; /* Ensures scrolling on small screens */
+    }
+
+    table {
+        min-width: 700px; /* Forces horizontal scrolling */
+    }
+
+    th, td {
+        padding: 0.6rem 0.8rem;
+        font-size: 12px;
+    }
+}

@@ -88,6 +88,48 @@ searchbar.addEventListener("keyup", ()=> {
 })
 
 
+// load recent jobs from the admin dashboard
+
+
+document.addEventListener("DOMContentLoaded",()=> {
+    const fetchJobs = JSON.parse(localStorage.getItem("allJobs"));
+    const currentJobs=document.querySelector(".job-section .jobs");
+    fetchJobs.forEach(fetchedJob => {
+        const sectiondiv=document.createElement("div");
+        sectiondiv.classList.add("section");
+        sectiondiv.innerHTML=`
+          <i class="bx bxl-react"></i>
+                    <h2>${fetchedJob.JobTitle}</h2>
+                    <p>${fetchedJob.JobDescription}</p>
+                    <div class="salary">
+                        <h3 class="duration">${fetchedJob.JobType}</h3>
+                        <h3 class="pay">${fetchedJob.JobSalary}</h3>
+                    </div>
+                    <button>Apply Now</button>
+        `
+        currentJobs.appendChild(sectiondiv)
+    })
+
+  // load the username from localStorage
+
+   const LoadData = JSON.parse(localStorage.getItem("users"))
+
+
+     LoadData.forEach(userCurrent => {
+         const user = document.querySelector("menu .span");
+         user.textContent = userCurrent.userName;
+     })
+   
+})
+
+
+
+
+
+
+
+
+
 
 
 

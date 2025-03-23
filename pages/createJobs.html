@@ -1,0 +1,80 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Listing Dashboard</title>
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../assets/boxicons/css/boxicons.min.css">
+</head>
+<body>
+    <div class="dashboard">
+        <aside>
+           <div class="head">
+            <i class="bx bxl-joomla"></i>
+            <h2>Job Portal Dashboard</h2>
+           </div>
+           <div class="menus">
+              <a href="./dashboard.html">
+                <div class="menu">
+                    <i class="bx bx-user"></i>
+                    <h2>All Users</h2>
+                  </div>
+              </a>
+              <a href="./seeAppliedJobs.html">
+                <div class="menu">
+                    <i class="bx bx-briefcase"></i>
+                    <h2>All Applied Jobs</h2>
+                  </div>
+              </a>
+              <a href="./createJobs.html">
+                <div class="menu">
+                    <i class="bx bx-plus-circle"></i>
+                    <h2>Create New Jobs</h2>
+                  </div>
+              </a>
+              <a href="#">
+                <div class="menu">
+                    <i class="bx bx-log-out"></i>
+                    <h2>Logout</h2>
+                  </div>
+              </a>
+           </div>
+        </aside>
+        <main>
+           <h2>Create New Jobs</h2>
+             <div class="middle">
+                <div class="job-content">
+                    <h3>Job Name</h3>
+                    <input type="text" placeholder="enter job title" class="job-title">
+                 </div>
+                 <div class="job-content">
+                    <h3>Job description</h3>
+                    <textarea placeholder="enter job description" class="description"></textarea>
+                 </div>
+                 <div class="job-content">
+                    <h3>Job Type</h3>
+                    <select class="job-type">
+                        <option value="">--- Select Job Type ---</option>
+                        <option value="Full Time">Full Time</option>
+                        <option value="Remote">Remote</option>
+                        <option value="Part Time">Part Time</option>
+                    </select>
+                 </div>
+                 <div class="job-content">
+                   <h3>Salary</h3>
+                   <select class="salary">
+                    <option value="">--- Select Salary ---</option>
+                    <option value="$25/hr">$25/hr</option>
+                    <option value="$30/hr">$30/hr</option>
+                    <option value="$45/hr">$45/hr</option>
+                    <option value="$50/hr">$50/hr</option>
+                   </select>
+                 </div>
+                 <button>Create Job</button>
+             </div>
+        </main>
+    </div>
+
+    <script src="../scripts/createjobs.js"></script>
+</body>
+</html>

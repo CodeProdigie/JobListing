@@ -26,8 +26,10 @@ const LoadJobs = (AppliedJobs) => {
                     <h3 class="duration">${job.duration}</h3>
                     <h3 class="pay">${job.pay}</h3>
                 </div>
-                <span>Pending</span>
+                <span class="statusState">${job.status}</span>
     `
-    joblist.appendChild(sectiondiv)
+    
+       joblist.appendChild(sectiondiv)
     })
+    
 }

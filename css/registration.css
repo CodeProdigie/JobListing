@@ -1,0 +1,92 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    border: none;
+    outline: none;
+    text-decoration: none;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.holder{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.forms{
+    max-width: 30rem;
+    width: 100%;
+    padding: 2rem 2rem;
+    border-radius: 5rem;
+    box-shadow: 1px 1px 15px #828282;
+    position: absolute;
+}
+
+.forms .head{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 0;
+}
+
+.forms .head h2{
+    color: rgb(51, 51, 177);
+}
+
+.forms .head i{
+    font-size: 3rem;
+    color: rgb(51, 51, 177);
+}
+
+.forms .content{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 10px;
+}
+
+.forms .content input{
+    padding: 12px 3rem;
+    border-radius: 10px;
+    box-shadow: 1px 1px 5px grey;
+}
+
+.forms .bottom{
+   display: flex;
+   flex-direction: column;
+   gap: 10px;
+   color: #828282;
+}
+
+.forms button{
+    width: 60%;
+    margin: 0 auto;
+    padding: 10px;
+    padding: 10px 0;
+    border-radius: 10px;
+    background-color: rgb(51, 51, 177);
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.login{
+    display: none;
+}
+
+.holder.active .register{
+    display: none;
+}
+
+.holder.active .login{
+    display: block;
+}
